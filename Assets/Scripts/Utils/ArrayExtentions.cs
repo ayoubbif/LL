@@ -1,4 +1,4 @@
-﻿namespace Utils
+﻿namespace KKL.Utils
 {
     public static class ArrayExtentions
     {

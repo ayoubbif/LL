@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Player
+namespace KKL.Player
 {
     public class PlayerLook : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Utils
+namespace KKL.Utils
 {
     public static class CursorUtils
     {

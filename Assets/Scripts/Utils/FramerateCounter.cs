@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-namespace Utils
+namespace KKL.Utils
 {
     public class FramerateCounter : MonoBehaviour
     {
