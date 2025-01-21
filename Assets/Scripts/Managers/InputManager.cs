@@ -28,6 +28,7 @@ namespace KKL.Managers
             _playerInput = new PlayerInput();
             
             _playerActions = _playerInput.Player;
+            _uiActions = _playerInput.UI;
             
             if (!playerController) playerController = GetComponent<PlayerController>();
             if (!playerLook) playerLook = GetComponent<PlayerLook>();
