@@ -74,18 +74,18 @@ MonoBehaviour:
   scanIndicator: {fileID: 8090279237498784406}
   scanner:
     rayContainer: {fileID: 1850282745677540255}
-    numOfRays: 128
-    verticalScanAngle: 45
-    horizontalScanAngle: 45
-    scanRate: 45
+    numOfRays: 100
+    verticalScanAngle: 30
+    horizontalScanAngle: 50
+    scanRate: 30
   painter:
     rayContainer: {fileID: 6302246969749759320}
     raysPerLayer: 45
     numOfLayers: 45
     angles:
-      min: 10
+      min: 5
       max: 45
-      initial: 20
+      initial: 15
     angleAdjustSensitivity: 10
 --- !u!1 &3860221190924898324
 GameObject:
@@ -300,8 +300,7 @@ GameObject:
   - component: {fileID: 2167731682659652284}
   - component: {fileID: 5933938800486160702}
   - component: {fileID: 7305016702956422110}
-  - component: {fileID: 4966076060094779671}
-  - component: {fileID: 7028552876240133574}
+  - component: {fileID: 8729522505421107361}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -415,11 +414,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebbaba2d455e475cb9eee6da00d4e4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 4966076060094779671}
-  playerLook: {fileID: 7028552876240133574}
   lidar: {fileID: 5787093739137375620}
   pointRenderer: {fileID: 0}
---- !u!114 &4966076060094779671
+--- !u!114 &8729522505421107361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -428,27 +425,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 7453587355460071166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f61cfad1d4074940ada5cacab8a3905, type: 3}
+  m_Script: {fileID: 11500000, guid: 804ce363ead14152a43b3862a8ffbc79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  gravity: -9.8
-  jumpHeight: 1
---- !u!114 &7028552876240133574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7453587355460071166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5662409340e429e838b36b77ffe0c61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 8283086733719517638}
-  xSensitivity: 30
-  ySensitivity: 30
+  canJump: 0
+  canSprint: 1
+  canCrouch: 0
+  canHeadBob: 1
+  walkSpeed: 3
+  sprintSpeed: 4.5
+  crouchSpeed: 1
+  xSensitivity: 5
+  ySensitivity: 5
+  upperLookLimit: 80
+  lowerLookLimit: 80
+  jumpForce: 8
+  gravity: 30
+  crouchHeight: 0.5
+  standingHeight: 1.75
+  timeToCrouch: 0.25
+  crouchingCenter: {x: 0, y: 0.2, z: 0}
+  standingCenter: {x: 0, y: 0, z: 0}
+  walkBobSpeed: 10
+  walkBobAmount: 0.03
+  sprintBobSpeed: 15
+  sprintBobAmount: 0.07
+  crouchBobSpeed: 5
+  crouchBobAmount: 0.01
+  stairsSpeed: 1.7
 --- !u!1 &8090279237498784406
 GameObject:
   m_ObjectHideFlags: 0

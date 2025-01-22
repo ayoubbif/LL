@@ -66,9 +66,13 @@ namespace KKL.LiDAR
             _currentEffect.Reinit();
         }
         
-        public void SetReferencePosition(Vector3 referencePosition)
+        public void SetRefPosition(Vector3 pos)
         {
-            _currentEffect.SetVector3(ReferencePosParamName, referencePosition);
+            // Set reference position for all the effects
+            foreach (var effect in _effects)
+            {
+                effect.SetVector3(ReferencePosParamName, pos);
+            }
         }
         
         public void ClearAllPoints()
