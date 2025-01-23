@@ -31,6 +31,8 @@ namespace KKL.LiDAR
                 _isScanning = value;
                 _scanAngle = _isScanning ? -verticalScanAngle : verticalScanAngle;
                 ActivateRays(_rays, _isScanning);
+
+                controller.CanLook = !_isScanning;
                 controller.CanMove = !_isScanning;
                 controller.CanHeadBob = !_isScanning;
             }

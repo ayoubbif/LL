@@ -75,10 +75,10 @@ MonoBehaviour:
   scanIndicator: {fileID: 8090279237498784406}
   scanner:
     rayContainer: {fileID: 1850282745677540255}
-    numOfRays: 100
-    verticalScanAngle: 30
-    horizontalScanAngle: 50
-    scanRate: 30
+    numOfRays: 69
+    verticalScanAngle: 25
+    horizontalScanAngle: 45
+    scanRate: 25
     controller: {fileID: 8729522505421107361}
   painter:
     rayContainer: {fileID: 6302246969749759320}
