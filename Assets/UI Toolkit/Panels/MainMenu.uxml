@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenu.uss?fileID=7433441132597879392&amp;guid=8c11048a1c7f0234ebf384aaf0af7417&amp;type=3#MainMenu" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; flex-direction: column; background-color: rgba(255, 255, 255, 0);">
+        <ui:VisualElement style="flex-grow: 1; flex-direction: column; width: 30%; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0); -unity-font: initial;">
+            <ui:Button text="PLAY" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Play" class="button" style="white-space: nowrap; -unity-font: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/VT323/VT323-Regular.ttf?fileID=12800000&amp;guid=70d650f422d238548963c18541616301&amp;type=3#VT323-Regular&quot;);" />
+            <ui:Button text="SETTINGS" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Settings" class="button" style="-unity-font: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/VT323/VT323-Regular.ttf?fileID=12800000&amp;guid=70d650f422d238548963c18541616301&amp;type=3#VT323-Regular&quot;);" />
+            <ui:Button text="QUIT" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Quit" class="button" style="-unity-font: url(&quot;project://database/Assets/UI%20Toolkit/Fonts/VT323/VT323-Regular.ttf?fileID=12800000&amp;guid=70d650f422d238548963c18541616301&amp;type=3#VT323-Regular&quot;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

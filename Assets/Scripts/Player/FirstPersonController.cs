@@ -14,6 +14,8 @@ namespace KKL.Player
         
         public bool CanMove { get; set; } = true;
         public bool CanLook { get; set; } = true;
+        
+        public bool CanHeadBob { get; set; } = true;
 
         [Header("Functional Options")] 
         [SerializeField] private bool canJump = true;
@@ -196,6 +198,8 @@ namespace KKL.Player
             if (!_characterController.isGrounded) return;
 
             if (!(Mathf.Abs(_moveDirection.x) > 0.1f) && !(Mathf.Abs(_moveDirection.z) > 0.1f)) return;
+
+            if (!CanHeadBob) return;
             
             _timer += Time.deltaTime * (_isCrouching ? crouchBobSpeed : _isSprinting ? sprintBobSpeed : walkBobSpeed);
             _playerCamera.transform.localPosition = new Vector3(
