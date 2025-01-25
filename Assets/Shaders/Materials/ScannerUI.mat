@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ScannerUI
+  m_Shader: {fileID: -6465566751694194690, guid: 4a588a45af035b64eaa097e768d5782c, type: 3}
+  m_Parent: {fileID: 2100000, guid: ab79f8f625d60874eabc0e0948c920f5, type: 2}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _Metallic: 0
+    - _ScrollSpeed: 0.25
+    - _Smoothness: 0.5
+    m_Colors:
+    - _BaseColor: {r: 0.39082098, g: 1, b: 0, a: 1}
+    - _Color: {r: 0.39082095, g: 1, b: 0, a: 1}
+    - _FresnelColor: {r: 0.27990928, g: 8.910461, b: 0, a: 0}
+    - _MainColor: {r: 0.3144367, g: 1.7080061, b: 0.29234058, a: 0}
+    - _Tiling: {r: 256, g: 256, b: 0, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
+--- !u!114 &5471573611097213921
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 9
