@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3577941236806284541}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: -0.1506, z: 0.6442}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.06, y: -0.07, z: 0.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -75,20 +75,20 @@ MonoBehaviour:
   scanIndicator: {fileID: 8090279237498784406}
   scanner:
     rayContainer: {fileID: 1850282745677540255}
-    numOfRays: 69
-    verticalScanAngle: 25
-    horizontalScanAngle: 45
-    scanRate: 25
+    numOfRays: 100
+    verticalScanAngle: 30
+    horizontalScanAngle: 50
+    scanRate: 30
     controller: {fileID: 8729522505421107361}
   painter:
     rayContainer: {fileID: 6302246969749759320}
-    raysPerLayer: 45
-    numOfLayers: 45
+    raysPerLayer: 10
+    numOfLayers: 10
     angles:
       min: 5
-      max: 45
+      max: 30
       initial: 15
-    angleAdjustSensitivity: 10
+    angleAdjustSensitivity: 5
 --- !u!1 &3860221190924898324
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +179,7 @@ Transform:
   m_GameObject: {fileID: 4431137215868337283}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -197,19 +197,19 @@ Camera:
   serializedVersion: 2
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
-  m_projectionMatrixMode: 1
+  m_projectionMatrixMode: 2
   m_GateFitMode: 2
   m_FOVAxisMode: 0
   m_Iso: 200
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
   m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
+  m_SensorSize: {x: 54.12, y: 25.59}
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -219,13 +219,13 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 60
+  field of view: 63.23288
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 255
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -437,8 +437,8 @@ MonoBehaviour:
   walkSpeed: 3
   sprintSpeed: 4.5
   crouchSpeed: 1
-  xSensitivity: 5
-  ySensitivity: 5
+  xSensitivity: 15
+  ySensitivity: 15
   upperLookLimit: 80
   lowerLookLimit: 80
   jumpForce: 8
@@ -472,7 +472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6009314773033643363
 Transform:
   m_ObjectHideFlags: 0
@@ -482,7 +482,7 @@ Transform:
   m_GameObject: {fileID: 8090279237498784406}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0, z: 0.0113}
+  m_LocalPosition: {x: 0.0018, y: 0.01, z: 0.0088}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -498,8 +498,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.36875913, g: 0.7735849, b: 0.15742764, a: 1}
-  m_Intensity: 0.015
+  m_Color: {r: 0.4922855, g: 1, b: 0.22506726, a: 1}
+  m_Intensity: 0.06
   m_Range: 0.36
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -652,15 +652,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7047191180963713841, guid: 0ca53a201955afb42bed6b8bd36498c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0024
       objectReference: {fileID: 0}
     - target: {fileID: 7047191180963713841, guid: 0ca53a201955afb42bed6b8bd36498c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.026
+      value: -0.0223
       objectReference: {fileID: 0}
     - target: {fileID: 7047191180963713841, guid: 0ca53a201955afb42bed6b8bd36498c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0801
+      value: -0.0836
       objectReference: {fileID: 0}
     - target: {fileID: 7047191180963713841, guid: 0ca53a201955afb42bed6b8bd36498c6, type: 3}
       propertyPath: m_LocalRotation.w
