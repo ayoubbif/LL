@@ -7,12 +7,11 @@ namespace KKL.Managers
 {
     public class InputManager : Singleton<InputManager>
     {
-        [Header("Components")]
-        [SerializeField] private PlayerController playerController;
-        [SerializeField] private PlayerLook playerLook;
+        
         [SerializeField] private Lidar lidar;
         [SerializeField] private PointRenderer pointRenderer;
         
+        private FirstPersonController _controller;
         private PlayerInput _playerInput;
         private PlayerInput.PlayerActions _playerActions;
         private PlayerInput.UIActions _uiActions;
@@ -22,6 +21,26 @@ namespace KKL.Managers
             InitializeComponents();
             SetupInputActions();
         }
+
+        private void OnEnable()
+        {
+            _playerActions.Enable();
+        }
+
+        private void FixedUpdate()
+        {
+            _controller.HandleMovement(_playerActions.Move.ReadValue<Vector2>());
+        }
+        
+        private void LateUpdate()
+        {
+            _controller.HandleCamera(_playerActions.Look.ReadValue<Vector2>());
+        }
+
+        private void OnDisable()
+        {
+            _playerActions.Disable();
+        }
         
         private void InitializeComponents()
         {
@@ -30,8 +49,7 @@ namespace KKL.Managers
             _playerActions = _playerInput.Player;
             _uiActions = _playerInput.UI;
             
-            if (!playerController) playerController = GetComponent<PlayerController>();
-            if (!playerLook) playerLook = GetComponent<PlayerLook>();
+            if (!_controller)  _controller = GetComponent<FirstPersonController>();
             if (!lidar) lidar = GetComponent<Lidar>();
         }
         
@@ -42,14 +60,33 @@ namespace KKL.Managers
             // Jump
             _playerActions.Jump.performed += _ =>
             {
-                playerController.Jump();
+                _controller.HandleJump();
             };
+            
+            // Sprint
+            _playerActions.Sprint.performed += _ =>
+            {
+                _controller.StartSprinting();
+            };
+            
+            _playerActions.Scan.canceled += _ =>
+            {
+                _controller.StopSprinting();
+            };
+            
+            // Crouch
+            _playerActions.Crouch.performed += _ =>
+            {
+                _controller.HandleCrouch();
+            };
+            
             
             // Shooting actions
             _playerActions.Scan.started += _ => ChangeLidarState(true);
             _playerActions.Scan.canceled += _ => ChangeLidarState(false);
             _playerActions.Paint.started += _ => ChangeLidarPaintingState(true);
             _playerActions.Paint.canceled += _ => ChangeLidarPaintingState(false);
+            
             
             // Pause Menu
             _uiActions.Pause.started += _ =>
@@ -72,21 +109,6 @@ namespace KKL.Managers
         private void ChangeLidarPaintingState(bool painting)
         {
             lidar.IsPainting = painting;
-        }
-        
-        private void FixedUpdate()
-        {
-            playerController.ProcessMove(_playerActions.Move.ReadValue<Vector2>());
-        }
-        
-        private void LateUpdate()
-        {
-            playerLook.ProcessLook(_playerActions.Look.ReadValue<Vector2>());
-        }
-
-        private void OnDisable()
-        {
-            _playerActions.Disable();
         }
     }
 }

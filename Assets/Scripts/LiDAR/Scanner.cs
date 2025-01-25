@@ -1,4 +1,5 @@
 ﻿using System;
+using KKL.Player;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
@@ -13,6 +14,7 @@ namespace KKL.LiDAR
         [SerializeField] private float verticalScanAngle;
         [SerializeField] private float horizontalScanAngle;
         [SerializeField] private float scanRate;
+        [SerializeField] private FirstPersonController controller;
         
         private GameObject[] _rays;
         private float _scanAngle;
@@ -29,6 +31,10 @@ namespace KKL.LiDAR
                 _isScanning = value;
                 _scanAngle = _isScanning ? -verticalScanAngle : verticalScanAngle;
                 ActivateRays(_rays, _isScanning);
+
+                controller.CanLook = !_isScanning;
+                controller.CanMove = !_isScanning;
+                controller.CanHeadBob = !_isScanning;
             }
         }
 

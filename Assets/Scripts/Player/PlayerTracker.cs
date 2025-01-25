@@ -10,7 +10,7 @@ namespace KKL.Player
         
         private void Update()
         {
-            pointRenderer.SetReferencePosition(player.position);
+            pointRenderer.SetRefPosition(player.position);
         }
     }
 }
