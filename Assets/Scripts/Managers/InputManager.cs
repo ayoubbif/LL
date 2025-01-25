@@ -30,6 +30,11 @@ namespace KKL.Managers
         private void FixedUpdate()
         {
             _controller.HandleMovement(_playerActions.Move.ReadValue<Vector2>());
+            
+            if (lidar.IsPainting)
+            {
+                lidar.Painter.Paint();
+            }
         }
         
         private void LateUpdate()
@@ -81,12 +86,11 @@ namespace KKL.Managers
             };
             
             
-            // Shooting actions
+            // Lidar actions
             _playerActions.Scan.started += _ => ChangeLidarState(true);
             _playerActions.Scan.canceled += _ => ChangeLidarState(false);
-            _playerActions.Paint.started += _ => ChangeLidarPaintingState(true);
             _playerActions.Paint.canceled += _ => ChangeLidarPaintingState(false);
-            
+            _playerActions.Paint.started += _ => ChangeLidarPaintingState(true);
             
             // Pause Menu
             _uiActions.Pause.started += _ =>

@@ -66,7 +66,6 @@ namespace KKL.LiDAR
                 return;
 
             AdjustRays();
-            IsPainting = false;
         }
         
         private void AdjustRays()
